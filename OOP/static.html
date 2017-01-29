@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script>
+		function Shape(shapeName){
+			this.ShapeNmae = shapeName;
+			Shape.count = ++Shape.count || 1; // static / Shared variable
+			
+			Shape.calcEarning = function(){
+				var a = 10
+				a = Shape.count;
+				return a;
+			}
+			
+	
+			Shape.ShowCount = function(){
+				return Shape.count
+			}
+			
+			
+		}
+	</script>
+
+</head>
+
+<body>
+	<script>
+		var el1 = new Shape("Circle");
+		document.write("<br />");
+		document.write("Number of Object :" + Shape.ShowCount());
+		document.write("<br />");
+		document.write("Calc Object :" + Shape.calcEarning());
+
+		var el2 = new Shape("Square");
+		document.write("<br />");
+		document.write("Number of Object :" + Shape.ShowCount());
+		document.write("<br />");
+		document.write("Calc Object :" + Shape.calcEarning());
+
+		var el3 = new Shape("Triangle");
+		document.write("<br />");
+		document.write("Number of Object :" + Shape.ShowCount());
+		document.write("<br />");
+		document.write("Calc Object :" + Shape.calcEarning());
+		
+		
+	</script>
+ 
+</body>
+</html>

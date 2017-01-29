@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script>
+		function Employee(name, age){
+			// private fields
+			var _name = name;	//	read only
+			var _age = age;		//	r/w
+			
+			Object.defineProperty(this, "name", {
+				get: function(){
+					return _name	
+				},
+			})
+			
+			Object.defineProperty(this, "age", {
+				get: function(){
+					return _age
+				},
+				set: function(value){
+					_age = value;
+				}
+			});
+			
+			
+			Object.defineProperty(this, "name", {
+				get:function(){
+					
+				},
+				set:function(){
+					
+				}
+			})
+			Object.defineProperty(this, "xxx",{
+				get: function(){
+					
+				},
+				set: function(){
+					
+				}
+			})
+			
+		}
+	</script>
+
+</head>
+
+<body>
+	<script>
+		var el = new Employee("John", 22);
+		el.age = 31;
+		el.name = "Jun";
+		
+		document.write("<br />");
+		document.write(el.name);
+		document.write("<br />");
+		document.write(el.age);
+	</script>
+ 
+</body>
+</html>
