@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<script>
+  		var Employee = function(pName) {this.name = pName}
+  		Employee.prototype.getClassname = function() {
+  			return "generic Employee";
+  		}
+  		
+  		Employee.prototype.calcEarnings = function() {
+  				return 0;
+  		}
+  		
+  		var FullTime = function(pName, pSalary) {
+  				Employee.call(this, pName)// super
+  				this.salary = pSalary
+  			}
+  		
+  		FullTime.prototype = Object.create(Employee.prototype);
+  		
+  		FullTime.prototype.getClassname = function() {
+  				return "fulltime employee";
+  		}
+  		
+  		FullTime.prototype.calcEarnings = function() {
+  				return this.salary;
+  		}
+  		
+  		
+  		var PartTime = function(pName, pRate) {
+  				Employee.call(this, pName)// super
+  				this.rate = pRate
+  		}
+  		PartTime.prototype = Object.create(Employee.prototype);
+  		PartTime.prototype.getClassname = function() {
+  				return "parttime employee";
+  		}
+  		PartTime.prototype.calcEarnings = function() {
+  				return this.rate;
+  		}
+  		
+  		
+  		
+  		
+  		var empArray = [new Employee("john"), new PartTime("Jun", 50), new FullTime("JiWon",5000)];
+	
+  		empArray.forEach (function(employee) {
+  			document.write (employee.name + "<br />");
+  			document.write (employee.calcEarnings() + "<br />");
+  		});
+   		
+  		
+  		
+  	</script>
+  	
+</head>
+
+<body>
+  
+</body>
+</html>
