@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>JJ Group's Quiz Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<script src="jquery-2.1.3.min.js"></script>
+  	<script src="checkJoin.js"></script>
+  	<script src="quizSystem.js"></script>
+	<link rel="stylesheet" href="JJQuiz.css">
+
+</head>
+
+<body>
+  
+    <div class="outMargin">
+    <header>
+      <h1>Please join JJ Quiz</h1>
+    </header>
+    
+    <div class="outline">
+	    <form id="mainf" action="quiz.html" method="get">
+	    		
+	    	<label for="Name">Name: </label>
+	        <input id="firstName" type="text" placeholder="First name" maxlength="64">
+	    	<span id="firstNameError">*</span>
+	        <br />
+	            
+	    	<label for="Name1"> &nbsp;</label>
+	        <input id="lastName" type="text" placeholder="Last name" maxlength="64">
+	    	<span id="lastNameError">*</span>
+			<br />
+	 
+	     	<label for="email">Email Address: </label>
+			<input type="text" id="email">
+			<span id="emailError">*</span>
+			<br />
+			
+			<label for="phoneNumber">Phone Number:  </label>
+			<input type="text" id="phoneNumber">
+			<span id="phoneNumberError">*</span>
+			<br />
+			
+	     	<label for="Address">Address: </label>
+			<input type="text" id="address">
+			<br />
+			
+			<!-- <input type="button" class="button" value="Join"> -->
+			<input type="button" id="btJoin" value="Join">
+	    
+	    </form>
+    </div>
+    </div>
+    
+ <script>
+
+	var user = JJquiz.getUser()
+	$("#firstName").val(user.firstName);
+	$("#lastName").val(user.lastName);
+	$("#email").val(user.email);
+	$("#phoneNumber").val(user.phone);
+	$("#address").val(user.address);
+	
+
+</script>	
+
+</body>
+</html>
